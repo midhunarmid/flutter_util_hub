@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_util_hub/core/presentation/blocs/auth/authentication_bloc.dart';
 import 'package:flutter_util_hub/core/presentation/utils/constants.dart';
 import 'package:flutter_util_hub/core/presentation/utils/message_generator.dart';
@@ -96,7 +97,7 @@ class _SigninScreenState extends State<SigninScreen> {
       },
       child: BlocBuilder<AuthenticationBloc, AuthenticationState>(
           bloc: _bloc,
-          builder: (context, state) {
+          builder: (ctx, state) {
             return Scaffold(
               body: Center(
                 child: Container(
@@ -108,16 +109,16 @@ class _SigninScreenState extends State<SigninScreen> {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        const SizedBox(height: 32),
+                        SizedBox(height: 32.h),
                         Text(
                           MessageGenerator.getMessage("auth-welcome"),
                           textAlign: TextAlign.center,
                           style: Theme.of(context)
                               .textTheme
-                              .labelMedium
-                              ?.copyWith(),
+                              .headlineSmall
+                              ?.copyWith(color: Colors.blue),
                         ),
-                        const SizedBox(height: 32),
+                        SizedBox(height: 32.h),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: TextField(
@@ -148,8 +149,8 @@ class _SigninScreenState extends State<SigninScreen> {
                             ),
                           ),
                         ),
-                        const SizedBox(
-                          height: 16,
+                        SizedBox(
+                          height: 8.h,
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
@@ -184,8 +185,8 @@ class _SigninScreenState extends State<SigninScreen> {
                             ),
                           ),
                         ),
-                        const SizedBox(
-                          height: 32,
+                        SizedBox(
+                          height: 8.h,
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
@@ -200,7 +201,7 @@ class _SigninScreenState extends State<SigninScreen> {
                             },
                           ),
                         ),
-                        const SizedBox(height: 32),
+                        SizedBox(height: 16.h),
                         RichText(
                           textAlign: TextAlign.center,
                           text: TextSpan(
@@ -223,7 +224,7 @@ class _SigninScreenState extends State<SigninScreen> {
                             ],
                           ),
                         ),
-                        const SizedBox(height: 32),
+                        SizedBox(height: 16.h),
                         RichText(
                           textAlign: TextAlign.center,
                           text: TextSpan(
@@ -245,7 +246,7 @@ class _SigninScreenState extends State<SigninScreen> {
                             ],
                           ),
                         ),
-                        const SizedBox(height: 32),
+                        SizedBox(height: 32.h),
                         Linkify(
                           onOpen: (link) async {
                             if (!await launchUrl(Uri.parse(link.url))) {}
@@ -262,7 +263,7 @@ class _SigninScreenState extends State<SigninScreen> {
                               .labelSmall
                               ?.copyWith(color: appColors.linkTextColor),
                         ),
-                        const SizedBox(height: 32),
+                        SizedBox(height: 32.h),
                       ],
                     ),
                   ),
