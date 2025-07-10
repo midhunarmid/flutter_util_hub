@@ -30,4 +30,4 @@ Note: This repository aims to continually evolve with contributions from the com
 ___
 
 
-🚀 Accelerate Your Flutter Development by following https://www.youtube.com/@FlutterForNoobs
+🚀 Accelerate Your Flutter Development by following [FlutterForNoobs](https://www.youtube.com/playlist?list=PLEBCfiuZ50JoGNb7YkpB6ih7ymKFA3dRL)
